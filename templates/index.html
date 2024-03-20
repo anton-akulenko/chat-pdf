@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завантаження документів</title>
+</head>
+<body>
+    <h2>Завантажити документ (PDF)</h2>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file[]" accept=".pdf">
+        <input type="submit" value="Завантажити">
+    </form>
+
+    <h2>Список завантажених файлів:</h2>
+    <ul>
+    {% for file in files %}
+        <li>{{ file }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="/search"><button>Перейти до пошуку</button></a>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+</head>
+<body>
+    <h1>Upload Documents</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file[]" multiple>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html> -->

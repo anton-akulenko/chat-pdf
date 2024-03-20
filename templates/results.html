@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Результати пошуку</title>
+</head>
+<body>
+    <h2>Введіть ваше запитання:</h2>
+    <form action="/search" method="get">
+        <input type="text" name="query">
+        <button type="submit">Пошук</button>
+    </form>
+    
+    {% if query %}
+    <h2>Запит:</h2>
+    <p>{{ query }}</p>
+    <h2>Відповідь:</h2>
+    <ul>
+        {% for (answer, doc_index), doc_title in answers_with_titles %}
+        <li>{{ answer }} (Знайдено в документі: {{ doc_title }})</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <form action="/search" method="post">
+        <input type="text" name="query" placeholder="Enter your query">
+        <button type="submit">Search</button>
+    </form>
+    <div>
+        <h2>Results:</h2>
+        <ul>
+            {% for message in messages %}
+                <li>{{ message.role }}</li>
+                <li>{{ message.content }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
